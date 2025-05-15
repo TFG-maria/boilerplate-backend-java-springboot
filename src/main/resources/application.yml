@@ -1,0 +1,14 @@
+spring:
+  application:
+    name: app-core
+server:
+  port: 5000
+
+test:
+  parameter: estaCogiendoElApplicationYML
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info
