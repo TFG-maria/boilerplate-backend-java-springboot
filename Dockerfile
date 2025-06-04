@@ -1,5 +1,5 @@
 # Stage 1: Build with Maven
-FROM maven:3.8.7-eclipse-temurin-17 AS builder
+FROM maven:3.9.4-eclipse-temurin-21 AS builder
 WORKDIR /build
 COPY pom.xml . 
 # Descargar dependencias sin el código
@@ -8,7 +8,7 @@ COPY src ./src
 RUN mvn clean package -DskipTests
 
 # Stage 2: Run
-FROM eclipse-temurin:17-jre-alpine
+FROM eclipse-temurin:21-jre-alpine
 WORKDIR /app
 # Copiar el JAR generado
 COPY --from=builder /build/target/*.jar app.jar

@@ -2,7 +2,7 @@ spring:
   application:
     name: app-core
 server:
-  port: 5000
+  port: 8080
 
 test:
   parameter: estaCogiendoElApplicationYML
